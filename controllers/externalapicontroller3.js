@@ -57,6 +57,16 @@ const initializeRAGChain = async () => {
 
     console.log('Initializing modern RAG chain for Scrabble dictionary...');
 
+    // const loader = new PDFLoader(pdfPath);
+    // const docs = await loader.load();
+    
+    // const textSplitter = new RecursiveCharacterTextSplitter({
+    //   chunkSize: 1000,
+    //   chunkOverlap: 200, // Overlap for context continuity
+    // });
+    
+    // const splitDocs = await textSplitter.splitDocuments(docs);
+
     // 1. Load Scrabble dictionary
     const loader = new TextLoader('./scrabble.txt');
     const rawDocs = await loader.load();

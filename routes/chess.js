@@ -6,7 +6,7 @@ const router = express.Router()
 
 
 
-router.post( '/find-move', findChessMove )
+router.patch( '/find-move', findChessMove )
 
 
 module.exports = router

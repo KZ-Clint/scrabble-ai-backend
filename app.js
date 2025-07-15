@@ -6,6 +6,9 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const externalApiRoutes = require('./routes/externalapi')
 const chessRoutes = require('./routes/chess')
+const imageRoutes = require('./routes/image')
+const insertVectorRoutes = require('./routes/insertvector')
+const chatBotRoutes = require('./routes/chatbot')
 
 const app = express()
 
@@ -64,10 +67,16 @@ app.use( '/api',  externalApiRoutes )
 
 app.use( '/api/chess',  chessRoutes )
 
+app.use( '/api/image',  imageRoutes )
+
+app.use( '/api/pinecone',  insertVectorRoutes )
+
+app.use( '/api/chat-bot', chatBotRoutes  )
+
 
 mongoose.set("strictQuery", false);
-const dburi = process.env.DB_CONNECTION
-mongoose.connect(dburi)
+// const dburi = process.env.DB_CONNECTION
+// mongoose.connect(dburi)
 console.log('connected to db')
 
 
